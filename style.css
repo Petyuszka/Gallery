@@ -115,15 +115,29 @@ p {
     margin-top: 20px;
     box-shadow: 0 14px 6px -6px #313131;
     position: relative;
+    animation: fadeactive 6s infinite;
+}
+
+@keyframes fadeactive {
+    0% {border-color: #000000;}
+    50% {border-color: #ffffff;}
+    100% {border-color: #000000;}
 }
 
 .active:after {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  left: 35px;
-  border: 15px solid transparent;
-  border-bottom-color: white;
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 35px;
+    border: 15px solid transparent;
+    border-bottom-color: white;
+    animation: fadeactiveafter 6s infinite;
+}
+
+@keyframes fadeactiveafter {
+    0% {border-bottom-color: #000000;}
+    50% {border-bottom-color: #ffffff;}
+    100% {border-bottom-color: #000000;}
 }
 
 .box:hover {
@@ -143,32 +157,31 @@ p {
 }
 
 .title {
-  display: none;
-  position: relative;
-  font-size: 70%;
-  background: black;
-  color: white;
-  border-radius: 5px;
-  padding: 5px;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  z-index: 2;
-  width: fit-content;
+    display: none;
+    position: relative;
+    font-size: 70%;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 2;
+    width: fit-content;
 }
 
-
 .title:after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-top-color: black;
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: black;
 }
 
 .box:hover .title {
-  display: block;
+    display: block;
 }
