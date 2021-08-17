@@ -93,7 +93,7 @@ p {
     column-gap: 10px;
 }
 
-.inactive {
+.box {
     background-color: white;
     border: solid 5px white;
     border-radius: 5px;
@@ -102,20 +102,21 @@ p {
     margin-top: 30px;
     box-shadow: 0 8px 6px -6px #313131;
     object-fit: fill;
+    position: relative;
+    cursor: pointer;
 }
 
 .active {
     background-color: white;
     border: solid 5px white;
     border-radius: 5px;
-    width: 100px;
-    height: 100px;
+    width: 100px!important;
+    height: 100px!important;
     margin-top: 20px;
     box-shadow: 0 14px 6px -6px #313131;
     position: relative;
 }
 
-.active:before,
 .active:after {
   content: '';
   position: absolute;
@@ -125,7 +126,7 @@ p {
   border-bottom-color: white;
 }
 
-.hoover{
+.box:hover {
     background-color: white;
     border: solid 5px white;
     border-radius: 5px;
@@ -134,4 +135,40 @@ p {
     margin-top: 20px;
     box-shadow: 0 14px 6px -6px #313131;
     object-fit: fill;
+    position: relative;
+}
+
+.box:hover.active .title {
+    display: none!important;
+}
+
+.title {
+  display: none;
+  position: relative;
+  font-size: 70%;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 2;
+  width: fit-content;
+}
+
+
+.title:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: black;
+}
+
+.box:hover .title {
+  display: block;
 }
